@@ -1,3 +1,27 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="jumbotron">
+    <h1>Currency Converter</h1>
+    <p class="lead">
+        Exchange rates fetched from <a href="https://openexchangerates.org">openexchangerates.org</a>...
+    </p>
+    <p class="lead">
+        <a href="#/about" class="btn btn-primary">About this project <i class="fa fa-long-arrow-right"></i></a>
+    </p>
+</div>
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <div class="row">
+          {{#if model.isUpdating}}
+            <div class="col-sm-12">
+                Loading currencies... <i class="fa fa-circle-o-notch fa-spin"></i>
+            </div>
+          {{/if}}
+        </div>
+    </div>
+</div>
 
-{{outlet}}
+{{debugger}}
+{{view 'select'
+  content=model.content.firstObject.rates
+  optionLabelPath="content.rate"
+  optionValuePath="content.code"
+}}
