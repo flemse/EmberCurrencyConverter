@@ -13,7 +13,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
       }]
     };
     var _id = 1;
-    data.currency[0].rates = _.map(payload.rates, function(code, rate) {
+    data.currency[0].rates = _.map(payload.rates, function(rate, code) {
       return {
         id: _id++,
         code: code,

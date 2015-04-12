@@ -19,9 +19,15 @@
     </div>
 </div>
 
-{{debugger}}
-{{view 'select'
-  content=model.content.firstObject.rates
-  optionLabelPath="content.rate"
-  optionValuePath="content.code"
-}}
+<div class="col-sm-12 col-md-6">
+  {{currency-converter-input
+    selected=model.content.firstObject.rates.firstObject
+    rates=model.content.firstObject.rates
+  }}
+</div>
+<div class="col-sm-12 col-md-6">
+  {{currency-converter-input
+    selected=model.content.firstObject.rates.firstObject
+    rates=model.content.firstObject.rates
+  }}
+</div>
